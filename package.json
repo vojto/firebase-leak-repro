@@ -6,9 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "multiply": "for i in {1..50}; do cp services/_leak.test.ts 'services/leak$i.test.ts'; done",
+    "test": "yarn multiply && NODE_OPTIONS='--max_old_space_size=1024' npx firebase emulators:exec --project demo --only firestore 'npx jest --runInBand --logHeapUsage'"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "firebase": "^9.11.0",
+    "firebase-tools": "^11.14.1",
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
