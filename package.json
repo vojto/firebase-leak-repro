@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "multiply": "for i in {1..50}; do cp services/_leak.test.ts 'services/leak$i.test.ts'; done",
-    "test": "yarn multiply && NODE_OPTIONS='--max_old_space_size=1024' npx firebase emulators:exec --project demo --only firestore 'npx jest --runInBand --logHeapUsage'"
+    "test": "./multiply.sh && NODE_OPTIONS='--max_old_space_size=1024' npx firebase emulators:exec --project demo --only firestore 'npx jest --runInBand --logHeapUsage'"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

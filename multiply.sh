@@ -1,0 +1,1 @@
+for i in {1..50}; do cp services/_leak.test.ts "services/leak$i.test.ts"; done
