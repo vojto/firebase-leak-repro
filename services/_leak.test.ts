@@ -15,5 +15,7 @@ describe("leak", () => {
 
     await firestore.terminate(db);
     await firebase.deleteApp(app);
+
+    global.gc!();
   });
 });
